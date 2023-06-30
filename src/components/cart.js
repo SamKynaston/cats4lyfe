@@ -9,8 +9,9 @@ const CartList = ({cart, setCart, getCartCost, setTotalCost}) => {
             <h1>£{getCartCost}</h1>
             <div className="items">
                 {cart.map((cat, x) => {
+                    console.log(cat)
                     return (
-                        <CatCart key={x} id={x} name={cat.name} image={cat.image} breed={cat.breed} cost={cat.price} setCart={setCart} getTotalCost={getCartCost} setTotalCost={setTotalCost}/>
+                        <CatCart key={x} id={cat.id} name={cat.name} image={cat.image} breed={cat.breed} cost={cat.price} setCart={setCart} getTotalCost={getCartCost} setTotalCost={setTotalCost}/>
                     )
                 })}
             </div>

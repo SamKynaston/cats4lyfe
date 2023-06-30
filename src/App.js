@@ -63,8 +63,6 @@ const App = () => {
         return null;
     }
 
-    console.log(setCost)
-
     return (
         <Router>
             <Navigation getCart={getCart}/>
