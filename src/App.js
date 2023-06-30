@@ -9,12 +9,14 @@ import './index.css';
 
 //Pages
 import Catalogue from './Catalogue';
+import Cat from './Cat';
 
 //Amount of Cats to Generate
 let cats = 20
 
 const App = () => {
     const [allCats, setCats] = useState([]);
+    const [cart, getCart] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const pseudonym = () => {
@@ -43,6 +45,7 @@ const App = () => {
             fakeData.map(async (cat, i) => {
                 cat["image"] = data[i]["image"].url;
                 cat["breed"] = data[i].name;
+                cat["description"] = data[i].description;
                 console.log(data)
             })
 
@@ -60,6 +63,7 @@ const App = () => {
         <Router>
             <Routes>
                 <Route path="/" element={<Catalogue cats={allCats}/>} />
+                <Route path="/cat/:ID" element={<Cat cats={allCats}/>} />
             </Routes>
         </Router>
     )
