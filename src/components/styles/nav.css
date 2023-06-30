@@ -1,4 +1,36 @@
 nav {
-    padding: 12px;
     background-color: #555;
+    display: flex;
+    position:relative;
+    padding: 8px;
+}
+
+nav .left {
+    flex: 1 0 25%; /* explanation below */
+    justify-content: left;
+    text-align: left;
+}
+
+nav .right {
+    flex: 1 0 25%; /* explanation below */
+    justify-content: right;
+    text-align: right;
+}
+
+nav .center {
+    flex: 1 0 25%; /* explanation below */
+    justify-content: center;
+}
+
+.nav-item {
+    margin: 6px;
+}
+
+nav a {
+    color:#FFF;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
