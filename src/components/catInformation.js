@@ -13,7 +13,6 @@ const CatInformation = ({ID, cat, getCart, setCart, getTotalCost, setTotalCost})
         let toReturn = false
 
         getCart.map((catInArray, x) => {
-            console.log(catInArray.breed === cat.breed)
             if (catInArray.breed === cat.breed) {toReturn = true}
         })
 
