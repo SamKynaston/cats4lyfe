@@ -9,7 +9,7 @@
     flex: 1 0 21%; /* explanation below */
 }
 
-.item#main:hover {
+.item#main:hover, .item#cart img:hover {
     cursor: pointer;
 }
 

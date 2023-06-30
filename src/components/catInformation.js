@@ -1,7 +1,7 @@
 import "./styles/cat.css"
 import { useNavigate } from "react-router-dom";
 
-const CatInformation = ({ID, name, image, breed, description, cost, getCart, setCart, getTotalCost, setTotalCost}) => {
+const CatInformation = ({ID, cat, getCart, setCart, getTotalCost, setTotalCost}) => {
     let navigate = useNavigate(); 
 
     const routeChange = () =>{ 
@@ -9,25 +9,40 @@ const CatInformation = ({ID, name, image, breed, description, cost, getCart, set
         navigate(path);
     }
 
+    const isInCart = () => {
+        let toReturn = false
+
+        getCart.map((catInArray, x) => {
+            console.log(catInArray.breed === cat.breed)
+            if (catInArray.breed === cat.breed) {toReturn = true}
+        })
+        
+        return toReturn
+    }
+
+    let displayBtn = isInCart()
+
     return (
         <div className="item-full">
-            <h1>{name} - £{cost}</h1>
-            <img src={image} />
-            <h2>{breed}</h2>
-            <p>{description}</p>
-            <button onClick={() => {
+            <h1>{cat.name} - £{cat.price}</h1>
+            <img src={cat.image} />
+            <h2>{cat.breed}</h2>
+            <p>{cat.description}</p>
+
+            {displayBtn ? false : <button onClick={() => {
                 setCart([
                     ...getCart,
                     {
                         id: ID,
-                        name: name,
-                        image: image,
-                        price: cost,
+                        name: cat.name,
+                        breed: cat.breed,
+                        image: cat.image,
+                        price: cat.price,
                     },
                 ]);
-                setTotalCost(getTotalCost+Number(cost))
+                setTotalCost(getTotalCost+Number(cat.price))
                 routeChange();
-            }}>Add to Cart</button>
+            }}>Add to Cart</button>}
         </div>
     )
 }
