@@ -1,6 +1,6 @@
 import "./styles/cat.css"
 
-const CatCart = ({id, name, image, breed, cost, getCart, setCart}) => {
+const CatCart = ({id, name, image, breed, cost, setCart, getTotalCost, setTotalCost}) => {
     return (
         <div className="item">
             <h1>{name}</h1>
@@ -11,6 +11,7 @@ const CatCart = ({id, name, image, breed, cost, getCart, setCart}) => {
                 setCart(old => {
                     return old.filter((_, i) => i !== id)
                 })
+                setTotalCost(getTotalCost-cost)
             }}>Remove from Cart</button>
         </div>
     )
