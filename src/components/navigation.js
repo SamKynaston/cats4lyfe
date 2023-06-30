@@ -9,8 +9,7 @@ const Navigation = ({getCart}) => {
                 <Link className="nav-item" to="/"><img src={Logo} height={25}/></Link>
             </span>
             <span className="right">
-                <Link className="Home" to="/">Home</Link>
-                <Link className="nav-item" to="/cart">Go To Cart {getCart.length}</Link>
+                <Link className="nav-item" to="/cart">Cart ({getCart.length})</Link>
             </span>
         </nav>
     )
