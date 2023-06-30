@@ -7,16 +7,20 @@ import { faker } from "@faker-js/faker";
 //Styles
 import './index.css';
 
+//Components
+import Navigation from './components/navigation';
+
 //Pages
-import Catalogue from './Catalogue';
-import Cat from './Cat';
+import Catalogue from './pages/Catalogue';
+import Cat from './pages/Cat';
+import Cart from './pages/Cart';
 
 //Amount of Cats to Generate
 let cats = 28
 
 const App = () => {
     const [allCats, setCats] = useState([]);
-    const [cart, getCart] = useState([]);
+    const [getCart, setCart] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const pseudonym = () => {
@@ -60,9 +64,11 @@ const App = () => {
 
     return (
         <Router>
+            <Navigation getCart={getCart}/>
             <Routes>
                 <Route path="/" element={<Catalogue cats={allCats}/>} />
-                <Route path="/cat/:ID" element={<Cat cats={allCats}/>} />
+                <Route path="/cat/:ID" element={<Cat cats={allCats} getCart={getCart} setCart={setCart}/>} />
+                <Route path="/cart" element={<Cart getCart={getCart}/>} />
             </Routes>
         </Router>
     )

@@ -11,4 +11,4 @@ const CatCart = ({name, image, breed, cost}) => {
     )
 }
 
-export default Cat
+export default CatCart
