@@ -46,7 +46,6 @@ const App = () => {
                 cat["image"] = data[i]["image"].url;
                 cat["breed"] = data[i].name;
                 cat["description"] = data[i].description;
-                console.log(data)
             })
 
             setCats(fakeData)

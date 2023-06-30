@@ -1,7 +1,7 @@
 import "./styles/cat.css"
 import { useNavigate } from "react-router-dom";
 
-const Cat = ({id, name, image, breed}) => {
+const Cat = ({id, name, image, breed, cost}) => {
     let navigate = useNavigate(); 
 
     const routeChange = () =>{ 
@@ -14,6 +14,7 @@ const Cat = ({id, name, image, breed}) => {
             <h1>{name}</h1>
             <img src={image} />
             <h4>{breed}</h4>
+            <p>£{cost}</p>
         </div>
     )
 }

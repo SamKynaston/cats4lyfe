@@ -6,7 +6,7 @@ const Cats = ({listOfCats}) => {
         <div className="items">
             {listOfCats.map((cat, x) => {
                 return (
-                    <Cat id={x+1} name={cat.name} image={cat.image} breed={cat.breed}/>
+                    <Cat key={x} id={x+1} name={cat.name} image={cat.image} breed={cat.breed} cost={cat.price}/>
                 )
             })}
         </div>

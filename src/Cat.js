@@ -12,7 +12,7 @@ const Cat = (cats) => {
     }
 
     return (
-        <CatInformation name={cat.name} image={cat.image} breed={cat.breed} description={cat.description}/>
+        <CatInformation name={cat.name} image={cat.image} breed={cat.breed} description={cat.description} cost={cat.price}/>
     )
 }
 
