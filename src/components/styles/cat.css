@@ -1,0 +1,11 @@
+.item {
+    background-color: #3f3f3f;
+    color:#FFF;
+    text-align: center;
+    padding: 12px;
+}
+
+.item img {
+    width:100px;
+    height:100px;
+}
