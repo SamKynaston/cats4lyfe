@@ -1,17 +1,25 @@
 import "./styles/cat.css"
+import { useNavigate } from "react-router-dom";
 
-const CatCart = ({id, name, image, breed, cost, setCart, getTotalCost, setTotalCost}) => {
+const CatCart = ({cartID, cat, setCart, getTotalCost, setTotalCost}) => {
+    let navigate = useNavigate(); 
+
+    const routeChangeToCatPage = () =>{ 
+        let path = `/cat/${cat.id}`; 
+        navigate(path);
+    }
+
     return (
-        <div className="item">
-            <h1>{name}</h1>
-            <img src={image} />
-            <h4>{breed}</h4>
-            <p>£{cost}</p>
+        <div className="item" id="cart">
+            <h1>{cat.name}</h1>
+            <img src={cat.image} onClick={routeChangeToCatPage}/>
+            <h4>{cat.breed}</h4>
+            <p>£{cat.price}</p>
             <button onClick={() => {
                 setCart(old => {
-                    return old.filter((_, i) => i !== id)
+                    return old.filter((_, i) => i !== cartID)
                 })
-                setTotalCost(getTotalCost-cost)
+                setTotalCost(getTotalCost-cat.price)
             }}>Remove from Cart</button>
         </div>
     )
