@@ -10,7 +10,7 @@ const Cat = ({id, name, image, breed, cost}) => {
     }
     
     return (
-        <div className="item" onClick={routeChange}>
+        <div className="item" id="main" onClick={routeChange}>
             <h1>{name}</h1>
             <img src={image} />
             <h4>{breed}</h4>
