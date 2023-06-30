@@ -5,3 +5,10 @@
     margin: 16px;
     justify-content:center;
 }
+
+button {
+    box-shadow: 0 2px 10px rgb(71, 69, 69);
+    background-color: rgb(243, 154, 122);
+    font-size: 20px;
+    color: white;
+}
