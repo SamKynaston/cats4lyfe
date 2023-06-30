@@ -6,7 +6,7 @@
 .item {
     background-color: #3f3f3f;
     color:#FFF;
-    
+    flex: 1 0 21%; /* explanation below */
 }
 
 .item:hover {

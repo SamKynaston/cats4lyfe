@@ -12,7 +12,7 @@ import Catalogue from './Catalogue';
 import Cat from './Cat';
 
 //Amount of Cats to Generate
-let cats = 20
+let cats = 28
 
 const App = () => {
     const [allCats, setCats] = useState([]);
