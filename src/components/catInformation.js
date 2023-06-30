@@ -8,7 +8,7 @@ const CatInformation = ({ID, name, image, breed, description, cost, getCart, set
         let path = `/cart`; 
         navigate(path);
     }
-    
+
     return (
         <div className="item-full">
             <h1>{name} - £{cost}</h1>
@@ -19,7 +19,7 @@ const CatInformation = ({ID, name, image, breed, description, cost, getCart, set
                 setCart([
                     ...getCart,
                     {
-                        index: ID,
+                        id: ID,
                         name: name,
                         image: image,
                         price: cost,

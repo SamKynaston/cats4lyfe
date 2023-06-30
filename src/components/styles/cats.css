@@ -2,6 +2,6 @@
     flex-wrap: wrap;
     display:flex;
     gap:16px;
-    padding: 32px;
+    margin: 16px;
     justify-content:center;
 }
