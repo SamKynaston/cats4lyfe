@@ -24,7 +24,7 @@ const CatInformation = ({ID, cat, getCart, setCart, getTotalCost, setTotalCost})
             <h1>{cat.name} - £{cat.price}</h1>
             <img src={cat.image} />
             <h2>{cat.breed}</h2>
-            <p>{cat.description}</p>
+            <h3>{cat.description}</h3>
 
             {isInCart() ? false : <button onClick={() => {
                 setCart([
