@@ -1,6 +1,6 @@
 import CartList from "../components/cart";
 
-const Cart = ({getCart}) => {
+const Cart = ({getCart, setCart, getCost, setCost}) => {
     if (!getCart || getCart.length < 1) {
         return (
             <>
@@ -11,7 +11,7 @@ const Cart = ({getCart}) => {
 
     return (
         <>
-            <CartList cart={getCart}/>
+            <CartList cart={getCart} setCart={setCart} getCartCost={getCost} setTotalCost={setCost}/>
         </>
     );
 }

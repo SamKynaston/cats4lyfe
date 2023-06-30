@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import Logo from "../img/Cats4Life.png"
 
 const Navigation = ({getCart}) => {
-    console.log(getCart)
     return (
         <nav>
             <span className="left">

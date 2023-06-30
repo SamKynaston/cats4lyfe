@@ -22,7 +22,8 @@ const App = () => {
     const [allCats, setCats] = useState([]);
     const [getCart, setCart] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    const [getCost, setCost] = useState(0);
+    
     const pseudonym = () => {
         let toReturn = []
         
@@ -62,13 +63,15 @@ const App = () => {
         return null;
     }
 
+    console.log(setCost)
+
     return (
         <Router>
             <Navigation getCart={getCart}/>
             <Routes>
                 <Route path="/" element={<Catalogue cats={allCats}/>} />
-                <Route path="/cat/:ID" element={<Cat cats={allCats} getCart={getCart} setCart={setCart}/>} />
-                <Route path="/cart" element={<Cart getCart={getCart}/>} />
+                <Route path="/cat/:ID" element={<Cat cats={allCats} getCart={getCart} setCart={setCart} getTotalCost={getCost} setTotalCost={setCost}/>} />
+                <Route path="/cart" element={<Cart getCart={getCart} setCart={setCart} getCost={getCost} setCost={setCost}/>} />
             </Routes>
         </Router>
     )

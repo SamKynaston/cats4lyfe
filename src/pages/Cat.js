@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import CatInformation from "../components/catInformation";
 
-const Cat = ({ cats, getCart, setCart }) => {
+const Cat = ({ cats, getCart, setCart, getTotalCost, setTotalCost }) => {
     const { ID } = useParams()
     const cat = cats[ID-1]
 
@@ -12,7 +12,7 @@ const Cat = ({ cats, getCart, setCart }) => {
     }
 
     return (
-        <CatInformation id={ID} name={cat.name} image={cat.image} breed={cat.breed} description={cat.description} cost={cat.price} getCart={getCart} setCart={setCart}/>
+        <CatInformation id={ID} name={cat.name} image={cat.image} breed={cat.breed} description={cat.description} cost={cat.price} getCart={getCart} setCart={setCart} getTotalCost={getTotalCost} setTotalCost={setTotalCost}/>
     )
 }
 
