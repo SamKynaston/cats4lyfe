@@ -3,7 +3,7 @@ import CatInformation from "./components/catInformation";
 
 const Cat = (cats) => {
     const { ID } = useParams()
-    const cat = cats.cats[ID]
+    const cat = cats.cats[ID-1]
 
     if (!cat) {
         return (
