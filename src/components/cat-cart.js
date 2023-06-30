@@ -1,7 +1,7 @@
 import "./styles/cat.css"
 import { useNavigate } from "react-router-dom";
 
-const CatCart = ({id, name, image, breed, cost, setCart, getTotalCost, setTotalCost}) => {
+const CatCart = ({cartID, id, name, image, breed, cost, setCart, getTotalCost, setTotalCost}) => {
     let navigate = useNavigate(); 
 
     const routeChangeToCatPage = () =>{ 
@@ -17,7 +17,7 @@ const CatCart = ({id, name, image, breed, cost, setCart, getTotalCost, setTotalC
             <p>£{cost}</p>
             <button onClick={() => {
                 setCart(old => {
-                    return old.filter((_, i) => i !== id)
+                    return old.filter((_, i) => i !== cartID)
                 })
                 setTotalCost(getTotalCost-cost)
             }}>Remove from Cart</button>
