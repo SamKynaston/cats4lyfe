@@ -1,6 +1,14 @@
 import "./styles/cat.css"
+import { useNavigate } from "react-router-dom";
 
 const CatInformation = ({ID, name, image, breed, description, cost, getCart, setCart}) => {
+    let navigate = useNavigate(); 
+
+    const routeChange = () =>{ 
+        let path = `/cart`; 
+        navigate(path);
+    }
+    
     return (
         <div className="item-full">
             <h1>{name} - £{cost}</h1>
@@ -17,6 +25,7 @@ const CatInformation = ({ID, name, image, breed, description, cost, getCart, set
                         price: cost,
                     },
                 ]);
+                routeChange();
             }}>Add to Cart</button>
         </div>
     )
