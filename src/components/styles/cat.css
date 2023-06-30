@@ -4,18 +4,19 @@
 }
 
 .item {
-    background-color: #3f3f3f;
-    color:#FFF;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgb(71, 69, 69);
+    border-radius: 5px;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+    background-color: rgb(243, 154, 122);
     flex: 1 0 21%; /* explanation below */
 }
 
-.item:hover {
-    cursor: pointer;
-}
-
 .item img {
-    width:100px;
-    height:100px;
+    width:150px;
+    height:150px;
 }
 
 .item-full img {
