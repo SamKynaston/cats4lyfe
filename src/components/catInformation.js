@@ -16,11 +16,9 @@ const CatInformation = ({ID, cat, getCart, setCart, getTotalCost, setTotalCost})
             console.log(catInArray.breed === cat.breed)
             if (catInArray.breed === cat.breed) {toReturn = true}
         })
-        
+
         return toReturn
     }
-
-    let displayBtn = isInCart()
 
     return (
         <div className="item-full">
@@ -29,7 +27,7 @@ const CatInformation = ({ID, cat, getCart, setCart, getTotalCost, setTotalCost})
             <h2>{cat.breed}</h2>
             <p>{cat.description}</p>
 
-            {displayBtn ? false : <button onClick={() => {
+            {isInCart() ? false : <button onClick={() => {
                 setCart([
                     ...getCart,
                     {
