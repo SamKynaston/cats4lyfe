@@ -10,7 +10,7 @@ const Navigation = ({getCart}) => {
                 <Link className="nav-item" to="/"><img src={Logo} height={25}/></Link>
             </span>
             <span className="right">
-                <Link className="nav-item" to="/cart">{getCart.length}</Link>
+                <Link className="nav-item" to="/cart">Go To Cart {getCart.length}</Link>
             </span>
         </nav>
     )
